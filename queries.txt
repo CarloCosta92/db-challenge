@@ -1,0 +1,79 @@
+SELECT
+    id,
+    username,
+    birthdate,
+    TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) AS eta
+FROM
+    users;
+
+
+
+SELECT
+    p.id AS post_id,
+    p.title,
+    COUNT(l.post_id) AS totale_likes
+FROM
+    posts p
+LEFT JOIN
+    likes l ON p.id = l.post_id
+GROUP BY
+    p.id, p.title
+ORDER BY
+    totale_likes DESC;
+
+
+SELECT
+    p.id AS post_id,
+    p.title,
+    COUNT(l.post_id) AS totale_likes
+FROM
+    posts p
+LEFT JOIN
+    likes l ON p.id = l.post_id
+GROUP BY
+    p.id, p.title
+
+
+
+SELECT
+    u.id AS user_id,
+    u.username,
+    COUNT(m.id) AS totale_media_caricati
+FROM
+    users u
+LEFT JOIN
+    medias m ON u.id = m.user_id
+GROUP BY
+    u.id, u.username
+ORDER BY
+    totale_media_caricati DESC;
+
+
+SELECT
+    u.id AS user_id,
+    u.username,
+    COUNT(l.post_id) AS totale_likes_ricevuti
+FROM
+    users u
+LEFT JOIN
+    posts p ON u.id = p.user_id
+LEFT JOIN
+    likes l ON p.id = l.post_id
+GROUP BY
+    u.id, u.username
+ORDER BY
+    totale_likes_ricevuti DESC;
+
+
+SELECT
+    p.*
+FROM
+    posts p
+INNER JOIN
+    users u ON p.user_id = u.id
+WHERE
+    TIMESTAMPDIFF(YEAR, u.birthdate, '2024-01-01') BETWEEN 20 AND 30;
+
+
+
+

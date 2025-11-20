@@ -87,3 +87,13 @@ Utenti · Post · Media · Commenti · Likes
 Gli utenti possono pubblicare Post.
 Ogni post può avere dei Media associati e può ricevere Commenti e Like.
 Commenti e like sono sempre collegati sia al post sia all’utente che li ha creati.
+
+# 2. Query con MySQL
+
+Proseguire con l'implementazione del DB Piattaforma Social usando MySQL.
+
+Una volta sicuri del diagramma e/r, puoi passare alla nuova fase. Crea un nuovo database usando il un qualsiasi client MySQL e importate il file `db.sql` fornito. Aprite il file PDF e scrivete le query richieste. Al fianco di ogni richiesta, c'è il numero di risultati che dovrebbe restituirvi la query.
+
+Dopo aver testato le vostre query, riportatele in un file `.txt` e caricatelo nella repo.
+
+</aside>
